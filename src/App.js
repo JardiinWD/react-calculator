@@ -1,13 +1,11 @@
 import { useState } from "react";
 
-
-
 function App() {
 
   /* Ora sto dicendo che il calcolo sarà strettamente collegato alla function prestabilità di React */
-  const [calc, setCalc] = useState('')
+  const [calc, setCalc] = useState("")
   /* Stesso discorso per il risultato */
-  const [result, setResult] = useState('')
+  const [result, setResult] = useState("")
   /* per operatori */
   const operators = ['/', '*', '+', '-', '.'];
   /* Arrow Function per l'update del calcolo */
@@ -25,7 +23,8 @@ function App() {
     for (let i = 1; i < 10; i++) {
       /* All'interno dell'array vuoto pusho il button */
       digits.push(
-        <button key={i}>{i}</button>
+        <button
+          onClick={() => updateCalc(i.toString())} key={i}>{i}</button>
       )
     }
     /* Eseguo il return almeno di Digits */
@@ -60,9 +59,9 @@ function App() {
         <div className="digits">
           {/* Questa è la mia arrow-function con dentro ciclo for */}
           {createDigits()}
-          <button>0</button>
-          <button>.</button>
-          <button>=</button>
+          <button onClick={() => updateCalc('0')}>0</button>
+          <button onClick={() => updateCalc('.')}>.</button>
+          <button onClick={() => updateCalc('=')}>=</button>
         </div>
       </div>
     </div>

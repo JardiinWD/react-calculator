@@ -71,12 +71,13 @@ button:hover {
 
 /* Span è il risultato dell'operazione */
 .display span {
-  font-size: 16px;
+  font-size: 14px;
+  padding-right: 10px;
   color: #888;
 }
 /*endregion */
 
-/*region Operators */
+/*region Operators & digits */
 
 .operators {
   display: flex;

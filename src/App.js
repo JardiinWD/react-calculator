@@ -1,5 +1,21 @@
+import { useState } from "react";
+
+
 
 function App() {
+
+  /* Ora sto dicendo che il calcolo sarà strettamente collegato alla function prestabilità di React */
+  const [calc, setCalc] = useState('')
+  /* Stesso discorso per il risultato */
+  const [result, setResult] = useState('')
+  /* per operatori */
+  const operators = ['/', '*', '+', '-', '.'];
+  /* Arrow Function per l'update del calcolo */
+  const updateCalc = value => {
+    /* Quindi la funzione setCalc chiamata sopra */
+    setCalc(calc + value);
+  }
+
 
   /* Costante per i numeri */
   const createDigits = () => {
@@ -22,17 +38,21 @@ function App() {
       {/* Div principale per la calcolatrice */}
       <div className="calculator">
         {/* Display Calcolatrice */}
-        <div className="display"></div>
+        <div className="display">
+          {/* Se il risultato è 0 allora in parte al result non lasci niente */}
+          {result ? <span>(0)</span> : ''}
+          {calc || '0'}
+        </div>
         {/* Operatori +/-/:/* */}
         <div className="operators">
           {/* Diviso */}
-          <button>/</button>
+          <button onClick={() => updateCalc('/')}>/</button>
           {/* Moltiplicazione */}
-          <button>*</button>
+          <button onClick={() => updateCalc('*')}>*</button>
           {/* Addizione */}
-          <button>+</button>
+          <button onClick={() => updateCalc('+')}>+</button>
           {/* Sottrazione */}
-          <button>-</button>
+          <button onClick={() => updateCalc('-')}>-</button>
           {/* Delete Button */}
           <button>DEL</button>
         </div>

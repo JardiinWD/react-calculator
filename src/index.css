@@ -1,4 +1,6 @@
-/*region Generali  */
+/*region utilities  */
+
+/* Regola generale */
 * {
   margin: 0;
   padding: 0 ;
@@ -10,23 +12,95 @@
   --primary: #d81e5b;
   --secondary: #8c38ff;
   --darker:#131a26;
-  --lighter: white;
+  --lighter: #eee;
 }
 
 body {
   font-family: 'Fira Sans', sans-serif;
+  /* Stile */
+  background-color: var(--lighter);
 }
+
+.App {
+  display: flex;
+  min-height: 100vh;
+  align-items: center;
+  justify-content: center;
+  padding: 16px;
+}
+
+button {
+  appearance: none;
+  border: none;
+  outline: none;
+  color:#fff;
+  font-size: 16px;
+  padding: 16px;
+  cursor: pointer;
+  transition: 0.4s;
+}
+
+/* All'hover si scurisce un pò */
+button:hover {
+  opacity: 0.9;
+}
+
 /*endregion */
 
 
+/*region Calculator */
+.calculator {
+  width: 100%;
+  max-width: 400px;
+  background-color: #fff;
+  border-radius: 20px;
+  overflow-x: hidden;
+  box-shadow: 0px 2px 60px rgba(0, 0, 0, 0.2);
+}
+/*endregion */
 
-/* Regola generale */
+/*region Display */
+.display {
+  padding: 20px;
+  text-align: right;
+  background-color: var(--darker);
+  color: var(--lighter);
+  font-size: 22px;
+  font-weight: 700;
+}
+
+/* Span è il risultato dell'operazione */
+.display span {
+  font-size: 16px;
+  color: #888;
+}
+/*endregion */
+
+/*region Operators */
+
+.operators {
+  display: flex;
+}
+
+.operators button {
+  flex: 1 1 0%;
+  background-color: var(--primary);
+  font-weight: 800;
+}
+
+.digits {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.digits button {
+  flex: 1 1 calc(100% / 3);
+  max-width: calc(100% / 3);
+  background-color: var(--darker);
+}
 
 
-
-
-
-
+/*endregion */
 
 
 

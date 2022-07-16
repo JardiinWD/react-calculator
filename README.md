@@ -1,6 +1,6 @@
 # Progetto React Calculator
 
-Semplice progetto weather app con chiamata API dal servizio openweather.org Linguaggio utilizzato :
+Semplice progetto di una calcolatrice funzionante (web app). Linguaggio utilizzato :
 
 - HTML (Markup)
 - CSS (Markup)
